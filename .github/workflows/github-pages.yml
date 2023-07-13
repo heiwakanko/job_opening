@@ -52,10 +52,11 @@ jobs:
           cache: true
       - run: flutter --version
       - run: flutter pub get
-      - run: flutter build web --web-renderer html --base-href /
+      - run: flutter build web --web-renderer html --base-href /${{ github.event.repository.name }}/
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build/web
+          cname: taxi-saitama.com
