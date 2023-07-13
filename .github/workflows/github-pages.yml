@@ -59,4 +59,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build/web
-          cname: taxi-saitama.com
+          cname: www.taxi-saitama.com
