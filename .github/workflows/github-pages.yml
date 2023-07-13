@@ -52,6 +52,7 @@ jobs:
           cache: true
       - run: flutter --version
       - run: flutter pub get
+      # - run: flutter build web --web-renderer html --base-href /
       - run: flutter build web --web-renderer html --base-href /${{ github.event.repository.name }}/
 
       - name: Deploy
