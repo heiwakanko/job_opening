@@ -56,6 +56,19 @@ class ShareButtons extends StatelessWidget {
             }
           },
         ),
+        IconButton(
+          icon: const FaIcon(FontAwesomeIcons.envelope,
+              color: Colors.red), // Gmail's brand color
+          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+          onPressed: () async {
+            // Gmail
+            final emailUrl = Uri.parse('mailto:?subject=$text&body=$url');
+            if (await canLaunchUrl(emailUrl)) {
+              await launchUrl(emailUrl);
+            }
+          },
+        ),
+
         // Add other social media share buttons similarly
       ],
     );
