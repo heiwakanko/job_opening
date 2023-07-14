@@ -74968,7 +74968,7 @@ $0(){var s=this.a
 s.aF(new A.ald(s,this.b))},
 $S:0}
 A.ald.prototype={
-$0(){A.oP(A.f_("tel:+818058863663",0,null))
+$0(){A.oP(A.f_("tel:+81487559302",0,null))
 A.iL(this.b,!1).mq(0,null)},
 $S:0}
 A.v8.prototype={
