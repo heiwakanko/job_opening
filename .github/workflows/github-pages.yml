@@ -9,8 +9,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      MAP_API: ${{ secrets.MAP_API }}
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v3
@@ -21,16 +19,32 @@ jobs:
         id: version
         run: |
           REPOSITORY=$(echo ${{ github.repository }} | sed -e "s#.*/##")
-          echo "{name}={value}" >> $GITHUB_OUTPUT
+          echo "REPOSITORY=${REPOSITORY}" >> $GITHUB_ENV
 
-# ここから github secretsから環境変数を読み込みMAP_APIをweb/index.htmlのINSERT_MAPS_API_KEY_HEREに置換,しかし無意味である
-      - name: Set up .env
-        run: echo "MAP_API=${{ secrets.MAP_API }}" > .env
+      - name: Setup Flutter environment
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.10'
+          channel: 'stable'
+        
+      - name: Install flutter_dotenv
+        run: flutter pub add flutter_dotenv
+
+      - name: Fetch .env from project
+        run: |
+          cp jop_opening/.env .env
+          echo "Loaded .env file."
+
+      - name: Load .env into GitHub Actions environment
+        uses: SpicyPizza/create-envfile@v1
+        with:
+          file_name: .env
 
       - name: Check MAP_API
         run: |
           if [ -z "${MAP_API}" ]; then
             echo "MAP_API is not set"
+            exit 1
           else
             echo "MAP_API is set"
           fi
@@ -38,18 +52,11 @@ jobs:
       - name: Inject MAP_API into index.html
         run: |
             cp web/index.html web/index.html.template
-            sed -e "s/MAP_API/$(echo $MAP_API)/g" < web/index.html.template > web/index.html
+            sed -e "s/MAP_API/${MAP_API}/g" < web/index.html.template > web/index.html
 
       - name: Check if key is replaced
         run: grep -q 'MAP_API' web/index.html && echo 'Key not replaced' || echo 'Key replaced'
-# ここまで
 
-      - name: Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: '3.10.4'
-          channel: 'stable'
-          cache: true
       - run: flutter --version
       - run: flutter pub get
       - run: flutter build web --web-renderer html --base-href /
@@ -60,3 +67,72 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build/web
           cname: www.taxi-saitama.com
+
+
+
+
+
+
+
+# name: github pages
+
+# on:
+#   push:
+#     branches: [ main ]
+
+#   workflow_dispatch:
+
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     env:
+#       MAP_API: ${{ secrets.MAP_API }}
+#     timeout-minutes: 30
+#     steps:
+#       - uses: actions/checkout@v3
+#         with:
+#           token: ${{ secrets.GITHUB_TOKEN }}
+
+#       - name: Repository
+#         id: version
+#         run: |
+#           REPOSITORY=$(echo ${{ github.repository }} | sed -e "s#.*/##")
+#           echo "{name}={value}" >> $GITHUB_OUTPUT
+
+# # ここから github secretsから環境変数を読み込みMAP_APIをweb/index.htmlのINSERT_MAPS_API_KEY_HEREに置換,しかし無意味である
+#       - name: Set up .env
+#         run: echo "MAP_API=${{ secrets.MAP_API }}" > .env
+
+#       - name: Check MAP_API
+#         run: |
+#           if [ -z "${MAP_API}" ]; then
+#             echo "MAP_API is not set"
+#           else
+#             echo "MAP_API is set"
+#           fi
+      
+#       - name: Inject MAP_API into index.html
+#         run: |
+#             cp web/index.html web/index.html.template
+#             sed -e "s/MAP_API/$(echo $MAP_API)/g" < web/index.html.template > web/index.html
+
+#       - name: Check if key is replaced
+#         run: grep -q 'MAP_API' web/index.html && echo 'Key not replaced' || echo 'Key replaced'
+# # ここまで
+
+#       - name: Flutter
+#         uses: subosito/flutter-action@v2
+#         with:
+#           flutter-version: '3.10.4'
+#           channel: 'stable'
+#           cache: true
+#       - run: flutter --version
+#       - run: flutter pub get
+#       - run: flutter build web --web-renderer html --base-href /
+
+#       - name: Deploy
+#         uses: peaceiris/actions-gh-pages@v3
+#         with:
+#           github_token: ${{ secrets.GITHUB_TOKEN }}
+#           publish_dir: ./build/web
+#           cname: www.taxi-saitama.com
