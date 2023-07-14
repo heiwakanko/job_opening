@@ -17,7 +17,7 @@ class _PhoneAlertState extends State<PhoneAlert> {
           style: TextStyle(fontSize: 20.0),
         ),
         content: const Text(
-          '貴方の新しい未来を切り拓いてください！\n受付時間: 9:00~17:00',
+          '貴方の新しい未来を切り拓いてください！\n受付時間: 9:00~17:00\n048-755-9302に電話をします',
           style: TextStyle(fontSize: 12.0),
         ),
         actions: [
