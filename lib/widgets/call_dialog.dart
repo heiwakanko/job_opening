@@ -40,7 +40,7 @@ class _PhoneAlertState extends State<PhoneAlert> {
   }
 
   void _launchURL() {
-    final tel = Uri.parse("tel:+818058863663");
+    final tel = Uri.parse("tel:+81487559302");
     launchUrl(tel);
   }
 }
