@@ -4,7 +4,6 @@ import 'package:job_opening/screens/anti_gangsta_screen.dart';
 import 'package:job_opening/screens/hire_screen.dart';
 import 'package:job_opening/screens/company_screen.dart';
 import 'package:job_opening/screens/top_screen.dart';
-import 'package:flutter_html/flutter_html.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
