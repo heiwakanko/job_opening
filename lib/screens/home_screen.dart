@@ -4,6 +4,7 @@ import 'package:job_opening/screens/anti_gangsta_screen.dart';
 import 'package:job_opening/screens/hire_screen.dart';
 import 'package:job_opening/screens/company_screen.dart';
 import 'package:job_opening/screens/top_screen.dart';
+import 'package:flutter_html/flutter_html.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -70,7 +71,19 @@ class _HomeScreenState extends State<HomeScreen> {
         // color: Color.fromRGBO(11, 23, 41, 0.93),
         child: Center(
           child: SingleChildScrollView(
-            child: _pages[_currentIndex],
+            child: Column(
+              children: [
+                Html(
+                  data: """
+                  <!-- Insert your HTML here -->
+                  <meta name="description" content="平和観光 求人 タクシー 運転手 募集 埼玉県 さいたま市 桜区 暴力団等反社会的勢力排除宣言">
+                  <meta name="keywords" content="さいたま市, タクシー, ドライバー募集, 運転手募集, 平和観光, 求人, 暴力団等反社会的勢力排除宣言">
+                  <meta name="author" content="平和観光">
+                  """,
+                ),
+                _pages[_currentIndex],
+              ],
+            ),
           ),
         ),
       ),
