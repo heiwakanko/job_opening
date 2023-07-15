@@ -35,16 +35,11 @@ jobs:
             echo "MAP_API is set"
           fi
       
-      # - name: Inject MAP_API into index.html
-      #   run: |
-      #       cp web/index.html web/index.html.template
-      #       sed -e "s/MAP_API/$(echo $MAP_API)/g" < web/index.html.template > web/index.html
-
       - name: Inject MAP_API into index.html
         run: |
-          cp web/index.html web/index.html.template
-          sed -e "s/${MAP_API}/${{ secrets.MAP_API }}/g" web/index.html.template > web/index.html
-        
+            cp web/index.html web/index.html.template
+            sed -e "s/MAP_API/$(echo $MAP_API)/g" < web/index.html.template > web/index.html
+
       - name: Check if key is replaced
         run: grep -q 'MAP_API' web/index.html && echo 'Key not replaced' || echo 'Key replaced'
 # ここまで
