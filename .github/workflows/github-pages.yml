@@ -43,7 +43,7 @@ jobs:
       - name: Inject MAP_API into index.html
         run: |
           cp web/index.html web/index.html.template
-          sed -e "s#key=MAP_API#key=$(echo $MAP_API)#g" < web/index.html.template > web/index.html
+          sed -e 's?key=MAP_API?key='"$MAP_API"'?g' web/index.html.template > web/index.html
 
         
       - name: Check if key is replaced
