@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "タクシー運転手募集 | 埼玉県 さいたま市 桜区 平和観光 ドライバー 求人 暴力団等反社会的勢力排除宣言",
+      title: "埼玉県さいたま市のタクシー運転手募集 | 平和観光 暴力団等反社会的勢力排除宣言",
       theme: ThemeData(
         colorSchemeSeed: const Color.fromRGBO(0, 23, 57, 1),
         useMaterial3: true,
