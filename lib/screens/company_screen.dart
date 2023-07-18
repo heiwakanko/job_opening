@@ -41,7 +41,7 @@ class _CompanyScreenState extends State<CompanyScreen> {
                     topRight: Radius.circular(16.0),
                   ),
                   child: Image.asset(
-                    "assets/images/company1.png",
+                    "assets/images/company.png",
                   ),
                 ),
                 const ListDecolated(
