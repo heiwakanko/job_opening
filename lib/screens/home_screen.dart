@@ -29,9 +29,9 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
 
   final List<Color> _colors = [
-    const Color.fromRGBO(11, 23, 41, 1),
-    const Color.fromRGBO(11, 23, 41, 1),
-    const Color.fromRGBO(11, 23, 41, 1),
+    Colors.black,
+    Colors.black,
+    Colors.black,
     Colors.black,
   ];
 

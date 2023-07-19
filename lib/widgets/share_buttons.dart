@@ -17,7 +17,7 @@ class ShareButtons extends StatelessWidget {
           IconButton(
             icon: const FaIcon(
               FontAwesomeIcons.facebookF,
-              color: Color(0xFF1877F2),
+              // color: Color(0xFF1877F2),
             ),
             padding: const EdgeInsets.symmetric(horizontal: 10.0),
             onPressed: () async {
@@ -32,7 +32,7 @@ class ShareButtons extends StatelessWidget {
           IconButton(
             icon: const FaIcon(
               FontAwesomeIcons.twitter,
-              color: Color(0xFF1DA1F2),
+              // color: Color(0xFF1DA1F2),
             ),
             padding: const EdgeInsets.symmetric(horizontal: 10.0),
             onPressed: () async {
@@ -47,7 +47,7 @@ class ShareButtons extends StatelessWidget {
           IconButton(
             icon: const FaIcon(
               FontAwesomeIcons.line,
-              color: Color(0xFF00C300),
+              // color: Color(0xFF00C300),
             ),
             padding: const EdgeInsets.symmetric(horizontal: 10.0),
             onPressed: () async {
@@ -60,8 +60,10 @@ class ShareButtons extends StatelessWidget {
             },
           ),
           IconButton(
-            icon: const FaIcon(FontAwesomeIcons.envelope,
-                color: Colors.red), // Gmail's brand color
+            icon: const FaIcon(
+              FontAwesomeIcons.envelope,
+              // color: Colors.red,
+            ),
             padding: const EdgeInsets.symmetric(horizontal: 10.0),
             onPressed: () async {
               // Gmail

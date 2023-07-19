@@ -40,7 +40,7 @@ class _TopScreenState extends State<TopScreen> {
                     topRight: Radius.circular(16.0),
                   ),
                   child: Image.asset(
-                    "assets/images/top6.png",
+                    "assets/images/top1.png",
                   ),
                 ),
                 const ListDecolated(
