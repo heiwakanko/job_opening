@@ -106,7 +106,7 @@ class _TopScreenState extends State<TopScreen> {
                 const ListDecolated(
                   prIcon: Icons.trending_up,
                   prLine: "従業員食堂完備(日本料理 あい吉)",
-                  prSubLine: "従業員価格でツケで食べれます",
+                  prSubLine: "従業員価格で食べれます",
                   starColor1: Colors.amber,
                   starColor2: Colors.amber,
                   starColor3: Colors.amber,
@@ -129,8 +129,8 @@ class _TopScreenState extends State<TopScreen> {
                 ),
                 const ListDecolated(
                   prIcon: Icons.trending_up,
-                  prLine: "稼ぐ人は総支給で５０万以上",
-                  prSubLine: "それ以上の人も、それ以下の人もいます、好みのライフスタイルでOK",
+                  prLine: "好みのライフスタイルでOK",
+                  prSubLine: "自分のペースで働けます",
                   starColor1: Colors.amber,
                   starColor2: Colors.amber,
                   starColor3: Colors.amber,

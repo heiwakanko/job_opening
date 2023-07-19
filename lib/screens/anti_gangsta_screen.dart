@@ -40,8 +40,8 @@ class AntiGangstaScreen extends StatelessWidget {
                 ),
                 const ListDecolated(
                   prIcon: Icons.trending_up,
-                  prLine: "暴力団等反社会的勢力排除宣言！",
-                  prSubLine: "社会的責任を果たすために、、、",
+                  prLine: "",
+                  prSubLine: "",
                   starColor1: Colors.amber,
                   starColor2: Colors.amber,
                   starColor3: Colors.amber,
