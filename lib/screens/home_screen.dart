@@ -23,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final List<String> _titles = [
     "タクシードライバー募集(埼玉県さいたま市桜区の求人)",
-    "エントリーは簡単3STEP!",
+    "応募はは簡単3STEP!",
     "地域密着、24時間だから固定客が圧倒的に多い!",
     "暴力団等反社会的勢力排除宣言",
   ];
