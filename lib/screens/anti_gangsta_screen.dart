@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:job_opening/widgets/screen_links.dart';
-import 'package:job_opening/widgets/listtile_decolated.dart';
+// import 'package:job_opening/widgets/listtile_decolated.dart';
 import 'package:job_opening/widgets/my_divider.dart';
 import 'package:job_opening/widgets/rogo_k_opacity.dart';
 import 'package:job_opening/widgets/share_buttons.dart';
@@ -17,7 +17,7 @@ class AntiGangstaScreen extends StatelessWidget {
         alignment: AlignmentDirectional.topEnd,
         children: [
           Card(
-            color: const Color.fromRGBO(250, 250, 250, 1),
+            color: const Color.fromARGB(185, 250, 250, 250),
             margin: const EdgeInsets.only(
               left: 12,
               right: 12,

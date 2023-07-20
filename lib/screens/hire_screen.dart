@@ -17,7 +17,7 @@ class HireScreen extends StatelessWidget {
         alignment: AlignmentDirectional.topEnd,
         children: [
           Card(
-            color: const Color.fromRGBO(250, 250, 250, 1),
+            color: const Color.fromARGB(185, 250, 250, 250),
             margin: const EdgeInsets.only(
               left: 12,
               right: 12,
