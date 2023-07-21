@@ -57,8 +57,20 @@ class _TopScreenState extends State<TopScreen> {
                 ),
                 const ListDecolated(
                   prIcon: Icons.trending_up,
+                  prLine: "会社のノルマや人間関係に疲れたら、、、",
+                  prSubLine: "出発したら貴方だけの世界、自分のペースで好みのライフスタイル",
+                  starColor1: Colors.amber,
+                  starColor2: Colors.amber,
+                  starColor3: Colors.amber,
+                  starColor4: Colors.amber,
+                  starColor5: Colors.amber,
+                  borderColor: Colors.amber,
+                  borderWidth: 0.0,
+                ),
+                const ListDecolated(
+                  prIcon: Icons.trending_up,
                   prLine: "選べる勤務時間",
-                  prSubLine: "日勤、夜勤、隔勤でも",
+                  prSubLine: "日勤、夜勤、隔勤(１日おきの勤務)でも",
                   starColor1: Colors.amber,
                   starColor2: Colors.amber,
                   starColor3: Colors.amber,
@@ -82,7 +94,7 @@ class _TopScreenState extends State<TopScreen> {
                 const ListDecolated(
                   prIcon: Icons.trending_up,
                   prLine: "未経験は当社で２種免取得",
-                  prSubLine: "10日くらいで取得、難しくないです",
+                  prSubLine: '10日くらいで取得、難しくないです、誰にだって"初めて"はあります',
                   starColor1: Color.fromRGBO(255, 193, 7, 1),
                   starColor2: Colors.amber,
                   starColor3: Colors.amber,
@@ -94,7 +106,7 @@ class _TopScreenState extends State<TopScreen> {
                 const ListDecolated(
                   prIcon: Icons.trending_up,
                   prLine: "寮完備で即入居OK",
-                  prSubLine: "会社から近いのが嬉しい",
+                  prSubLine: "会社から近いのが嬉しい,煩わしい手続や敷金・礼金もありません",
                   starColor1: Colors.amber,
                   starColor2: Colors.amber,
                   starColor3: Colors.amber,
@@ -106,7 +118,7 @@ class _TopScreenState extends State<TopScreen> {
                 const ListDecolated(
                   prIcon: Icons.trending_up,
                   prLine: "従業員食堂完備(日本料理 あい吉)",
-                  prSubLine: "従業員価格で食べれます",
+                  prSubLine: "プロの味を従業員価格で食べれます",
                   starColor1: Colors.amber,
                   starColor2: Colors.amber,
                   starColor3: Colors.amber,
@@ -127,18 +139,6 @@ class _TopScreenState extends State<TopScreen> {
                   borderColor: Colors.amber,
                   borderWidth: 0.0,
                 ),
-                const ListDecolated(
-                  prIcon: Icons.trending_up,
-                  prLine: "好みのライフスタイルでOK",
-                  prSubLine: "自分のペースで働けます",
-                  starColor1: Colors.amber,
-                  starColor2: Colors.amber,
-                  starColor3: Colors.amber,
-                  starColor4: Colors.amber,
-                  starColor5: Colors.amber,
-                  borderColor: Colors.amber,
-                  borderWidth: 0.0,
-                ),
                 const MyDivider(),
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 12.0),
@@ -146,7 +146,7 @@ class _TopScreenState extends State<TopScreen> {
                     lines: [
                       const TextSpan(
                           text:
-                              "株式会社 平和観光は埼玉県で初めてCOVIT-19(新型コロナウィルス)の患者搬送業務を始めたタクシー・ハイヤーの会社です",
+                              "株式会社 平和観光は埼玉県で初めてCOVIT-19(新型コロナウィルス)の患者搬送業務を始めたタクシー・ハイヤーの会社です、当時はまだ、未知のウィルス。それにも関わらず数名の運転手が勇気を出して取り組んでくれました。",
                           style: TextStyle(
                               fontSize: 16.0,
                               color: Colors.black,
